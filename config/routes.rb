@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get '/signup' => 'users#new'
+  
+
   resources :workoutexercises
   resources :exercises
   resources :users
