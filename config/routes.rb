@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-root '/sessions#home'
+root 'sessions#home'
 
   get '/signup' => 'users#new'
   post '/signup' => 'users#show'
@@ -14,5 +14,6 @@ root '/sessions#home'
   resources :exercises
   resources :users
   resources :workouts
+  resources :sessions
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
