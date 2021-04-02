@@ -12,7 +12,9 @@ root 'sessions#home'
 
   resources :workoutexercises
   resources :exercises
-  resources :users
+  resources :users do
+    resources :workouts, only: [:new, :create, :index]
+  end
   resources :workouts
   resources :sessions
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
