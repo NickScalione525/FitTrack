@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
  
-<nav class="navbar navbar-default navbar-fixed-bottom-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
   <div class="container-fluid">
      <% if logged_in?%>
   <%= link_to "Create A Workout", new_workout_path, class: "navbar-brand" %>

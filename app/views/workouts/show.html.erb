@@ -9,7 +9,15 @@
 <%= @workout.duration%>
 <ul>
 <p>
+#exercises
+<h2>Exercises</h2>
+<%= render @workout.exercises%>
 
+
+<h3>Add an Exercise</h3>
+<%= render exercises/form%>
+
+<br>
 <%= link_to "Edit Workout", edit_workout_path(@workout)%>
 <br>
 
