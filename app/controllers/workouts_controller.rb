@@ -6,9 +6,9 @@ class WorkoutsController < ApplicationController
     end
 
     def create
-        @workout = Workout.new(workout_params)
+        @workout = current_user.workouts.build(workout_params)
         if @workout.save
-            redirect_to @workout
+            redirect_to workouts_path
         else
             render :new
         end
@@ -17,11 +17,18 @@ class WorkoutsController < ApplicationController
     def index
         if params[:user_id]
             user = User.find_by(id: params[:user_id])
-            @items = user.items
+            @workout = user.workout
         else
-            @workout = Workout.all
+            @workouts = Workout.all
 
+        end
+    end
 
+    private
+
+    def workout_params
+        params.require(:workout).permit(:name, :kind, :times_per_week)
+    end
 
 
 
