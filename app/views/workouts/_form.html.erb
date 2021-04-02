@@ -1,6 +1,7 @@
-<%= simple_form_for(@workout, html: { class: 'form-horizontal' }) do |f|%>
-  <%= f.input :name, label: 'Workout Name'%>
-  <%= f.input :kind, label: 'Workout Type'%>
-  <%= f.input :times_per_week, label: 'Workouts Per Week' %>
+<%= simple_form_for(@workout)do |f|%>
+  <%= f.input_field :date, label: 'Date'%>
+  <%= f.input :name, label: 'Workout Name', input_html: { class: "form_control" } %>
+  <%= f.input :kind, label: 'Workout Type',  input_html: { class: "form_control" }  %>
+  <%= f.input :duration, label: 'Workout Duration',  input_html: { class: "form_control" }  %>
   <%= f.button :submit %>
 <% end %>
