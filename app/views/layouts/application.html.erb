@@ -8,15 +8,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-
-  <div>
-  <% if logged_in?%>
-  <%= link_to "Create A Workout", new_workout_path %>
-  <%= link_to "All Workouts", workouts_path %>
-  <%= link_to "Logout", logout_path, method: "delete" %>
+ 
+<nav class="navbar navbar-default navbar-fixed-bottom-inverse">
+  <div class="container-fluid">
+     <% if logged_in?%>
+  <%= link_to "Create A Workout", new_workout_path, class: "navbar-brand" %>
+  <%= link_to "All Workouts", workouts_path, class: "navbar-brand" %>
+  <%= link_to "Logout", logout_path, method: "delete", class: "navbar-brand" %>
 
   <%else%>
 
@@ -24,7 +23,11 @@
   <%= link_to "Login",  login_path %>
   <% end %>
 
-  <div>
+  </div>
+</nav>
+<head>
+<body>
+
     <%= yield %>
-  </body>
+ <body>
 </html>

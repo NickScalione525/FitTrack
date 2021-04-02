@@ -1,5 +1,5 @@
 class WorkoutsController < ApplicationController
-    before_action :find_workout, only: [:show, :edit, :update, :destroy]
+    before_action :find_workout, only: [:show, :edit, :update, :destroy, :create, :new, :index  ]
 
     def index
         if params[:user_id]
