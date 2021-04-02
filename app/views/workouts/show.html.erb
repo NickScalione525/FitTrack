@@ -9,3 +9,10 @@
 <%= @workout.duration%>
 <ul>
 <p>
+
+<%= link_to "Edit Workout", edit_workout_path(@workout)%>
+<br>
+
+<br>
+
+<%= link_to "Delete Workout", workout_path(@workout), method: :delete, data: { confirm: "Are you sure you want to delete this workout?"}  %>
