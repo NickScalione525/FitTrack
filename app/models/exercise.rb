@@ -1,5 +1,4 @@
-class Exercise < ApplicationRecord /
-    +7\0]'ihfcz
+class Exercise < ApplicationRecord 
     has_many :workoutexercises
     has_many :workouts, through: :workoutexercises
 end
