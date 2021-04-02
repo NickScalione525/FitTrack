@@ -12,15 +12,7 @@ class ExercisesController < ApplicationController
         end
     end
 
-    def index
-        if params[:user_id]
-            user = User.find_by(id: params[:user_id])
-            @exercise = user.exercise
-        else
-            @exercises = Exercise.all
 
-        end
-    end
 
     private
 

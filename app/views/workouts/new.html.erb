@@ -1,14 +1,6 @@
-<%= form_for(@workout) do |f|%>
+<h1> New Workout </h1>
 
-<%= f.label :name%>
-<%= f.text_field :name%>
+<%= render 'form'%>
 
-<%= f.label :kind%>
-<%= f.text_field :kind%>
 
-<%= f.label :times_per_week%>
-<%= f.text_field :times_per_week%>
-
-<%= f.submit%>
-
-<%end%>
+<%= link_to "Exit", root_path%>
