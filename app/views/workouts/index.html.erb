@@ -1,5 +1,14 @@
 <% @workouts.each do |workout| %>
-<%= workout.name%>
 
+<div>
+</h2><%= link_to workout.date, workout%><h2>
+</h3>
+<%= workout.name%>
+<br>
+<%= workout.kind%>
+<br>
+<%= workout.duration%>
+<br><h3>
+<div>
 <%end%>
 

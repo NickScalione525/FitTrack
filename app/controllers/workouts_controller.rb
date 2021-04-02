@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+    before_action :find_workout, only: [:show, :edit, :update, :destroy]
 
     def index
         if params[:user_id]
@@ -10,8 +11,12 @@ class WorkoutsController < ApplicationController
         end
     end
 
+    def show
+
+    end
+
     def new
-        @workout = Workout.new
+        @workout = Workout.new(workout_params)
     end
 
     def create
@@ -22,7 +27,15 @@ class WorkoutsController < ApplicationController
             render :new
         end
     end
+    def update
 
+    end
+
+    def edit
+    end
+
+    def destroy
+    end
  
 
     private
@@ -31,6 +44,9 @@ class WorkoutsController < ApplicationController
         params.require(:workout).permit(:name, :kind, :duration, :date)
     end
 
+    def find_workout
+        @workout = Workout.find_by(params[:id])
+    end
 
 
 
