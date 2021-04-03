@@ -4,7 +4,7 @@ class WorkoutsController < ApplicationController
     def index
         if params[:user_id]
             user = User.find_by(id: params[:user_id])
-            @workout = current_user.workout
+            @workouts = current_user.workouts
         else
             @workouts = Workout.all
 

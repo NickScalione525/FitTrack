@@ -15,6 +15,7 @@
      <% if logged_in?%>
   <%= link_to "Create A Workout", new_workout_path, class: "navbar-brand" %>
   <%= link_to "All Workouts", workouts_path, class: "navbar-brand" %>
+  <%= link_to "My Workouts", user_workouts_path(current_user), class: "navbar-brand" %>
   <%= link_to "Logout", logout_path, method: "delete", class: "navbar-brand" %>
 
   <%else%>
